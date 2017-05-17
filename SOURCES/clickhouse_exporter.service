@@ -1,0 +1,13 @@
+[Unit]
+Description=ClickHouse Exporter for Prometheus
+Documentation=https://github.com/f1yegor/clickhouse_exporter
+After=network.target
+
+[Service]
+EnvironmentFile=-/etc/default/clickhouse_exporter
+User=prometheus
+ExecStart=/usr/bin/clickhouse_exporter
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
