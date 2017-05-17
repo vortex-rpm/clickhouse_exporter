@@ -68,7 +68,6 @@ exit 0
 /usr/bin/%{name}
 /usr/lib/systemd/system/%{name}.service
 %config(noreplace) /etc/default/%{name}
-%config(noreplace) /etc/prometheus/snmp.yml
 %attr(755, prometheus, prometheus)/var/lib/prometheus
 %doc _build/%{_git_slug}/LICENSE _build/%{_git_slug}/README.md
 
