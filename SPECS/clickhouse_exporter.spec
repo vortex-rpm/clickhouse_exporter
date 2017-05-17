@@ -26,7 +26,7 @@ for Prometheus consumption.
 %prep
 mkdir _build
 export GOPATH=$(pwd)/_build
-git clone https://github.com/prometheus/%{name} $GOPATH/%{_git_slug}
+git clone https://github.com/f1yegor/%{name} $GOPATH/%{_git_slug}
 cd $GOPATH/%{_git_slug}
 git checkout %{_git_commit}
 
