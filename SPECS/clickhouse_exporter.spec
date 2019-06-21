@@ -1,6 +1,6 @@
 %define debug_package %{nil}
 
-%define _git_slug src/github.com/ajardan/clickhouse_exporter
+%define _git_slug src/github.com/f1yegor/clickhouse_exporter
 %define _git_commit 8e3f389c67a72980692a93494b9898e6bc284cea
 
 Name:    clickhouse_exporter
@@ -9,7 +9,7 @@ Release: 1.%{_git_commit}.vortex%{?dist}
 Summary: ClickHouse Exporter for Prometheus
 License: MIT
 Vendor:  Vortex RPM
-URL:     https://github.com/ajardan/clickhouse_exporter
+URL:     https://github.com/f1yegor/clickhouse_exporter
 
 Source1: %{name}.service
 Source2: %{name}.default
