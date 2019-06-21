@@ -34,7 +34,8 @@ git checkout %{_git_commit}
 export GOPATH=$(pwd)/_build
 cd $GOPATH/%{_git_slug}
 make init
-make build
+go install -v
+go build -v %{name}.go
 strip %{name}
 
 %install
