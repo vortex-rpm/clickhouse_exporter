@@ -1,15 +1,15 @@
 %define debug_package %{nil}
 
-%define _git_slug src/github.com/f1yegor/clickhouse_exporter
-%define _git_commit 2dfd2ce94e7a4b38189f2260f75b85ef3ec2cf8e
+%define _git_slug src/github.com/ajardan/clickhouse_exporter
+%define _git_commit 8e3f389c67a72980692a93494b9898e6bc284cea
 
 Name:    clickhouse_exporter
 Version: 0.0
-Release: 0.%{_git_commit}.vortex%{?dist}
+Release: 1.%{_git_commit}.vortex%{?dist}
 Summary: ClickHouse Exporter for Prometheus
 License: MIT
 Vendor:  Vortex RPM
-URL:     https://github.com/f1yegor/clickhouse_exporter
+URL:     https://github.com/ajardan/clickhouse_exporter
 
 Source1: %{name}.service
 Source2: %{name}.default
@@ -26,7 +26,7 @@ for Prometheus consumption.
 %prep
 mkdir _build
 export GOPATH=$(pwd)/_build
-git clone https://github.com/f1yegor/%{name} $GOPATH/%{_git_slug}
+git clone https://github.com/ajardan/%{name} $GOPATH/%{_git_slug}
 cd $GOPATH/%{_git_slug}
 git checkout %{_git_commit}
 
@@ -72,5 +72,8 @@ exit 0
 %doc _build/%{_git_slug}/LICENSE _build/%{_git_slug}/README.md
 
 %changelog
+* Fri Jun 21 2018 Ilya Otyutskiy <ilya.otyutskiy@icloud.com> - 0.0.8e3f389c67a72980692a93494b9898e6bc284cea-1.vortex
+- Update to ajardan fork, which fixes support for latest clickhouse-server
+
 * Wed May 17 2017 Ilya Otyutskiy <ilya.otyutskiy@icloud.com> - 0.0.2dfd2ce94e7a4b38189f2260f75b85ef3ec2cf8e-1.vortex
 - Initial packaging
