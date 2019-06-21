@@ -33,8 +33,8 @@ git checkout %{_git_commit}
 %build
 export GOPATH=$(pwd)/_build
 cd $GOPATH/%{_git_slug}
-make format
-make
+make init
+make build
 strip %{name}
 
 %install
